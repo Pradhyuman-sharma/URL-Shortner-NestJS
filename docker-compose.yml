@@ -11,6 +11,8 @@ services:
       - ./src:/app/src
     depends_on:
       - db
+    environment:
+      STAGE: dev
 
   db:
     image: postgres
