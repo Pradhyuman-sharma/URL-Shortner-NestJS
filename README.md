@@ -14,8 +14,11 @@ This will return you the shorten URL with the give name like: ShortenURL=http://
 
 ## End Points
 ```GET
-http://localhost:3000/links will get all the links
-http://localhost:3000/shortenUrl/:name will get the shorten URL
+GET http://localhost:3000/links will get all the links
+GET http://localhost:3000/shortenUrl/:name will get the shorten URL
+DELETE http://localhost:3000/links/:id will delete the entery with given id
+PUT http://localhost:3000/links/6e8ce823-cd67-42e9-827d-adceaf17e663 Update the given id with the given body data
+GET http://localhost:3000/:name redirect to the webpage by taking shorten name as input
 ```
 ## Quick Start
 
