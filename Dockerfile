@@ -25,6 +25,7 @@ RUN apk add git
 CMD [ "yarn", "test:watch" ]
 
 FROM base AS prod
+ENV NODE_ENV=dev
 RUN yarn install --frozen-lockfile --production
 COPY . .
 RUN yarn global add @nestjs/cli
