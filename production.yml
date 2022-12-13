@@ -1,4 +1,22 @@
 services:
   app:
     build:
+    context: .
+      dockerfile: Dockerfile
       target: prod
+    ports:
+      - 3000:3000
+    volumes:
+      - ./src:/app/src
+    depends_on:
+      - db
+    environment:
+      STAGE: prod
+
+  db:
+    image: postgres
+    restart: always
+    ports:
+      - 5432:5432
+    environment:
+      POSTGRES_PASSWORD: postgres

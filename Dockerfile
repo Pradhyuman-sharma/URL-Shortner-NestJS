@@ -29,4 +29,5 @@ ENV NODE_ENV=production
 RUN yarn install --frozen-lockfile --production
 COPY . .
 RUN yarn global add @nestjs/cli
+RUN yarn build
 CMD [ "yarn", "start:prod" ]
