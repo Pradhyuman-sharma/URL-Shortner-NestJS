@@ -27,6 +27,7 @@
     "docker-compose:prod:build-only": "docker-compose -f docker-compose.yml -f production.yml build"
   },
   "dependencies": {
+    "@nestjs/testing": "^9.2.1",
     "@faker-js/faker": "^7.6.0",
     "@nestjs/common": "^9.2.1",
     "@nestjs/config": "^2.2.0",
