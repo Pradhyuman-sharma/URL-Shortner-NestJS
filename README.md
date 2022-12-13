@@ -1,35 +1,41 @@
-# NestJS Framework Boilerplate (PostgreSQL)
-
-[![CI/CD](https://github.com/dominicarrojado/nestjs-postgres-boilerplate/actions/workflows/ci.yml/badge.svg)](https://github.com/dominicarrojado/nestjs-postgres-boilerplate/actions/workflows/ci.yml)
+# NestJS URL-Shortner
 
 A local development setup or boilerplate for [Nest.js framework](https://nestjs.com/) with [PostgreSQL](https://www.postgresql.org/) and [pgAdmin4](https://www.pgadmin.org/) using [Docker Compose](https://docs.docker.com/compose/).
+A URL-shortner app which will shorten the URL by the given name of your choice. 
+For example in your postman make a post request:
+```bash
+POST http://localhost:3000/links
+with JSON body {
+    "name":"microsoft",
+    "url":"https://www.microsoft.com"
+}
+```
+This will return you the shorten URL with the give name like: ShortenURL=http://localhost:3000/microsoft
 
+## End Points
+```GET
+http://localhost:3000/links will get all the links
+http://localhost:3000/shortenUrl/:name will get the shorten URL
+```
 ## Quick Start
 
 1. Install [Node.js](https://nodejs.org/en/download/) - _for IDE type checking_.
 2. Install [Yarn](https://yarnpkg.com/lang/en/docs/install/) - _for IDE type checking_.
 3. Install [Docker Compose](https://docs.docker.com/compose/install/) and make sure it is running in the system background.
-4. Clone the app:
-
+4. 
 ```bash
-git clone git@github.com:dominicarrojado/nestjs-postgres-boilerplate.git
-```
-
-5. Install npm packages - _for IDE type checking_.
-
-```bash
-cd nestjs-postgres-boilerplate
+cd URL-Shortner-NestJS
 yarn install --frozen-lockfile
 ```
 
-6. Build and run the Docker image.
+5. Build and run the Docker image.
 
 ```bash
 yarn docker-compose:dev
 ```
 
-7. Access the app at http://localhost:3000.
-8. Make file changes and it will automatically rebuild the app.
+6. Access the app at http://localhost:3000.
+7. Make file changes and it will automatically rebuild the app.
 
 ## Running All Tests
 
@@ -64,6 +70,4 @@ yarn docker-compose:prod
 - [Prettier](https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode)
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
 
-## Learn
 
-Learn how to build this setup or boilerplate [here](https://dominicarrojado.com/posts/local-development-setup-for-nestjs-projects-with-postgresql/).
